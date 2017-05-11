@@ -6,16 +6,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class CityActivity extends AppCompatActivity {
-    private String[] city01 = {"北京"};
-    private String[] city02 = {"上海"};
-    private String[] city03 = {"天津"};
-    private String[] city04 = {"重庆"};
+    private String[] city01 = {"北京市"};
+    private String[] city02 = {"上海市"};
+    private String[] city03 = {"天津市"};
+    private String[] city04 = {"重庆市"};
     private String[] city17 = {"杭州","温州","嘉兴","宁波","绍兴","台州","湖州","丽水","金华","衢州","舟山"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         String province = getIntent().getStringExtra("province");
         String[] data=null;
         if ("北京".equals(province)){
@@ -30,8 +31,7 @@ public class CityActivity extends AppCompatActivity {
             data=city17;
         }
 
-
-        ListView listView = (ListView) findViewById(R.id.province_list);
+        ListView listView = (ListView) findViewById(R.id.list_view);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 CityActivity.this,android.R.layout.simple_list_item_1,data);
         listView.setAdapter(adapter);
